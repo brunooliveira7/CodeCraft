@@ -118,3 +118,6 @@ const startApp = () => {
 };
 
 startApp();
+
+//quando clicar no logo, ele vai iniciar o app novamente
+document.getElementById("logo").onclick = () => startApp() 
