@@ -9,11 +9,17 @@ const users = [
     refBy: null,
   },
   {
-    email: "teste2@teste.com",
+    email: "tust@tust.com",
     phone: "999999999",
     ref: 200,
     refBy: 100,
   },
+  {
+    email: "tost@tost.com",
+    phone: "999999999",
+    ref: 300,
+    refBy: 100,
+  }
 ];
 
 const getUser = (userData) => {
@@ -23,14 +29,24 @@ const getUser = (userData) => {
   });
 };
 
+//pega o total de inscritos
+const getTotalSubscribers = (userData) => {
+  const subs = users.filter((user) => {
+    return user.refBy == userData.ref;
+  })
+  //retorna os que tem o refBy
+  return subs.length;
+};
+
+
 //Mostra a tela de convite
 const showInvite = (userData) => {
   app.innerHTML = `
-     <input type="text" id="link" value="https://evento.com" disabled>
+     <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
 
     <div id="stats">
         <h4>
-           80
+            ${getTotalSubscribers(userData)}
         </h4>
         <p>
             Inscrições feitas!
