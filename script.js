@@ -18,8 +18,8 @@ const users = [
     email: "tost@tost.com",
     phone: "999999999",
     ref: 300,
-    refBy: 100,
-  }
+    refBy: 200,
+  },
 ];
 
 const getUser = (userData) => {
@@ -32,17 +32,19 @@ const getUser = (userData) => {
 //pega o total de inscritos
 const getTotalSubscribers = (userData) => {
   const subs = users.filter((user) => {
+    //filtra os que têm o refBy igual ao ref
     return user.refBy == userData.ref;
-  })
-  //retorna os que tem o refBy
+  });
+  //retorna o tamanho do array
   return subs.length;
 };
-
 
 //Mostra a tela de convite
 const showInvite = (userData) => {
   app.innerHTML = `
-     <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
+     <input type="text" id="link" value="https://evento.com?ref=${
+       userData.ref
+     }" disabled>
 
     <div id="stats">
         <h4>
@@ -53,6 +55,21 @@ const showInvite = (userData) => {
         </p>
     </div>
     `;
+};
+
+//salva o novo usuário
+const saveUser = (userData) => {
+  const newUser = {
+    //espalha os dados do newUser e adiciona no array
+    ...userData,
+    //gera um número aleatório
+    ref: Math.round(Math.random() * 4000),
+    refBy: 100,
+  };
+  //adiciona o novo usuário no array
+  users.push(newUser);
+  console.log(users);
+  return newUser;
 };
 
 const formAction = () => {
@@ -68,13 +85,17 @@ const formAction = () => {
       phone: formData.get("phone"),
     };
 
-    //pega o usuário do array, quando esse existir, se não existir retorna undefined
+    //pega o usuário do array, quando esse já estiver no array, se não existir retorna undefined
     const user = getUser(userData);
 
     if (user) {
-      //existe o usuário
+      //se existe o usuário no array, mostra a tela de convite
       showInvite(user);
     } else {
+      //se não existe o usuário - cadastrar o usuário
+      const newUser = saveUser(userData);
+      //mostra a tela de convite do novo usuário
+      showInvite(newUser);
     }
   };
 };
