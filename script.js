@@ -40,10 +40,10 @@ const getTotalSubscribers = (userData) => {
   return subs.length;
 };
 
-//Mostra a tela de convite
+//mostra a segunda tela - convite
 const showInvite = (userData) => {
   app.innerHTML = `
-      <main>
+       <main>
           <h3>Inscrição confirmada!</h3>
           <p>
             Convide mais pessoas e concorra a prêmios! <br />
@@ -53,16 +53,23 @@ const showInvite = (userData) => {
           <div class="input-group">
             <label for="link"></label>
             <img src="link.svg" alt="Link icon" />
-            <input type="text" id="link" value="https://evento.com?ref=${
-              userData.ref
-            }" disabled>
+            <input
+              type="text"
+              id="link"
+              value="https://evento.com?ref=${userData.ref}"
+              disabled
+            />
           </div>
         </main>
+
         <section class="stats">
-          <h4> ${getTotalSubscribers(userData)}</h4>
+          <h4>${getTotalSubscribers(userData)}</h4>
           <p>Inscrições feitas</p>
         </section>
     `;
+
+  //carrega as imagens da segunda tela
+  updateImageLinks();
 };
 
 //salva o novo usuário
@@ -118,9 +125,10 @@ const updateImageLinks = () => {
   });
 };
 
+//carrega a primeira tela com o formulário
 const startApp = () => {
   const content = `
-     <main>
+    <main>
         <section class="about">
           <div class="section-header">
             <h2>Sobre o evento</h2>
@@ -139,25 +147,35 @@ const startApp = () => {
           <h2>Inscrição</h2>
 
           <form id="form">
-            
             <div class="input-wrapper">
               <div class="input-group">
                 <label for="email">
-                  <img src="mail.svg" alt="E-mail icon">
+                  <img src="mail.svg" alt="E-mail icon" />
                 </label>
-                <input type="email" id="email" name="email" placeholder="E-mail" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="phone">
+                  <img src="phone.svg" alt="Phone icon" />
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Telefone"
+                />
               </div>
             </div>
 
-            <div class="input-group">
-              <label for="phone">
-                <img src="phone.svg" alt="Phone icon">
-              </label>
-              <input type="text" id="phone" name="phone" placeholder="Telefone" />
-            </div>
-                                
-            <button>Confirmar
-              <img src="arrow.svg" alt="Arrow right">
+            <button>
+              Confirmar
+              <img src="arrow.svg" alt="Arrow right" />
             </button>
           </form>
         </section>
