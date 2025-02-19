@@ -14,4 +14,26 @@ body {
   background: url("https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/bg.jpg")
     no-repeat center/cover;
   min-height: 100vh;
+  color: #E1E1E6;
+  display: grid;
+  place-items: center; /*pega os itens do filho - container - e coloca no centro*/
+}
+
+header {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Oxanium";
+  font-size: 2.5rem;
+  line-height: 100%;
+  color: #DAE4F2;
+}
+
+h1 div {
+  color: #6F9DE2;
 }

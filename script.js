@@ -22,6 +22,7 @@ const users = [
   },
 ];
 
+//retornar o usuário do array - cria o user
 const getUser = (userData) => {
   //procura no array(find) o user se tem o email igual ao que foi passado
   return users.find((user) => {
@@ -77,15 +78,15 @@ const formAction = () => {
   form.onsubmit = (event) => {
     event.preventDefault();
 
-    //pega os dados dos campos do formulário
+    //capta os dados dos campos do formulário
     const formData = new FormData(form);
-    //transformar os dados em um objeto
+    //formData tem que ser transformado em um objeto - para usar os dados do formulário
     const userData = {
       email: formData.get("email"),
       phone: formData.get("phone"),
     };
 
-    //pega o usuário do array, quando esse já estiver no array, se não existir retorna undefined
+    //getUser retorna o usuário do array, quando esse já estiver no array, se não existir retorna undefined
     const user = getUser(userData);
 
     if (user) {
@@ -100,24 +101,72 @@ const formAction = () => {
   };
 };
 
+//carregar todas as imagens
+const updateImageLinks = () => {
+  document.querySelectorAll("img").forEach((img) => {
+    const src = img.getAttribute("src");
+    if (src && !src.startsWith("http")) {
+      img.src = `https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/${src}`;
+    }
+  });
+};
+
 const startApp = () => {
   const content = `
-    <form id="form">
-        <input type="email" name="email" placeholder="E-mail">
-        <input type="text" name="phone" placeholder="Telefone">
-        <button>
-            Confirmar
-        </button>
-    </form>
+     <main>
+        <section class="about">
+          <div class="section-header">
+            <h2>Sobre o evento</h2>
+            <span class="badge"> AO VIVO </span>
+          </div>
+          <p>
+            Um evento feito por e para pessoas desenvolvedoras apaixonadas por
+            criar soluções inovadoras e compartilhar conhecimento. Vamos
+            mergulhar nas tendências mais recentes em desenvolvimento de
+            software, arquitetura de sistemas e tecnologias emergentes, com
+            palestras, workshops e hackathons. <br />
+            <br />Dias 15 a 17 de março | Das 18h às 21h | Online & Gratuito
+          </p>
+        </section>
+        <section class="registration">
+          <h2>Inscrição</h2>
+
+          <form id="form">
+            
+            <div class="input-wrapper">
+              <div class="input-group">
+                <label for="email">
+                  <img src="mail.svg" alt="E-mail icon">
+                </label>
+                <input type="email" id="email" name="email" placeholder="E-mail" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="phone">
+                <img src="phone.svg" alt="Phone icon">
+              </label>
+              <input type="text" id="phone" name="phone" placeholder="Telefone" />
+            </div>
+                                
+            <button>Confirmar
+              <img src="arrow.svg" alt="Arrow right">
+            </button>
+          </form>
+        </section>
+      </main>
     `;
   //atribuir o conteúdo do html para o app
   app.innerHTML = content;
+
+  //carrega as imagens
+  updateImageLinks();
 
   //impede o envio do formulário
   formAction();
 };
 
-startApp();
+//startApp();
 
 //quando clicar no logo, ele vai iniciar o app novamente
-document.getElementById("logo").onclick = () => startApp() 
+document.getElementById("logo").onclick = () => startApp();
