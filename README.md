@@ -11,7 +11,7 @@ Permite aos usuários controle de reembolso com funções de adicionar e listar 
 </p>
 
 <p align="center">
-  <img alt="License" src="https://github.com/brunooliveira7/Refund/blob/main/img/layout%20-%20refund.png">
+  <img alt="License" src="">
 </p>
 
 <br>
