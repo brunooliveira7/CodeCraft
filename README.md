@@ -31,7 +31,7 @@ O usuário pode remover dinamicamente itens da lista, com o total atualizado ap�
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/design/DVVxctUNAl4gkfhwLtYxGb/Sistema-de-reembolso-(Community)?node-id=0-1&node-type=canvas&m=dev). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/design/2krk2MsojLUq6ajftqQ6ge/NLW-Connect-%E2%80%A2-DevStage-(Community)?node-id=3-376&p=f&m=dev). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 
 ## :memo: Licença
