@@ -68,6 +68,9 @@ const showInvite = (userData) => {
         </section>
     `;
 
+  //adiciona a classe invite
+  app.setAttribute("class", "page-invite");
+
   //carrega as imagens da segunda tela
   updateImageLinks();
 };
@@ -184,6 +187,9 @@ const startApp = () => {
   //atribuir o conteúdo do html para o app
   app.innerHTML = content;
 
+  //adiciona a classe start
+  app.setAttribute("class", "page-start");
+
   //carrega as imagens
   updateImageLinks();
 
@@ -192,6 +198,11 @@ const startApp = () => {
 };
 
 startApp();
+//showInvite({
+//  email: "email@email.com",
+//  phone: "999999999",
+//  ref: 100,
+//});
 
 //quando clicar no logo, ele vai iniciar o app novamente
-document.getElementById("logo").onclick = () => startApp();
+document.querySelector("header").onclick = () => startApp();
