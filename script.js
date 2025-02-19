@@ -66,6 +66,14 @@ const showInvite = (userData) => {
           <h4>${getTotalSubscribers(userData)}</h4>
           <p>Inscrições feitas</p>
         </section>
+
+        <footer>
+          <button>
+            Voltar ao início
+            <img src="arrow.svg" alt="Arrow right" />
+          </button>
+        </footer>
+    
     `;
 
   //adiciona a classe invite
@@ -197,12 +205,13 @@ const startApp = () => {
   formAction();
 };
 
-startApp();
-//showInvite({
-//  email: "email@email.com",
-//  phone: "999999999",
-//  ref: 100,
-//});
+//startApp();
+showInvite({
+  email: "email@email.com",
+  phone: "999999999",
+  ref: 100,
+});
 
-//quando clicar no logo, ele vai iniciar o app novamente
+//quando clicar no logo e no voltar, inicia o app novamente
 document.querySelector("header").onclick = () => startApp();
+document.querySelector("footer").onclick = () => startApp();

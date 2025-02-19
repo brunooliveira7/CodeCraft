@@ -198,3 +198,9 @@ h4 {
   line-height: 100%;
   color: #C8D0DA;
 }
+
+footer button {
+  margin-top: 1.5rem;
+  width: 100%;
+  cursor: pointer;
+}
