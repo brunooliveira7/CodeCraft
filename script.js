@@ -43,18 +43,25 @@ const getTotalSubscribers = (userData) => {
 //Mostra a tela de convite
 const showInvite = (userData) => {
   app.innerHTML = `
-     <input type="text" id="link" value="https://evento.com?ref=${
-       userData.ref
-     }" disabled>
+      <main>
+          <h3>Inscrição confirmada!</h3>
+          <p>
+            Convide mais pessoas e concorra a prêmios! <br />
+            Compartilhe o link e acompanhe as inscrições:
+          </p>
 
-    <div id="stats">
-        <h4>
-            ${getTotalSubscribers(userData)}
-        </h4>
-        <p>
-            Inscrições feitas!
-        </p>
-    </div>
+          <div class="input-group">
+            <label for="link"></label>
+            <img src="link.svg" alt="Link icon" />
+            <input type="text" id="link" value="https://evento.com?ref=${
+              userData.ref
+            }" disabled>
+          </div>
+        </main>
+        <section class="stats">
+          <h4> ${getTotalSubscribers(userData)}</h4>
+          <p>Inscrições feitas</p>
+        </section>
     `;
 };
 
@@ -166,7 +173,7 @@ const startApp = () => {
   formAction();
 };
 
-//startApp();
+startApp();
 
 //quando clicar no logo, ele vai iniciar o app novamente
 document.getElementById("logo").onclick = () => startApp();
