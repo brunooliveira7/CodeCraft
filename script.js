@@ -205,12 +205,12 @@ const startApp = () => {
   formAction();
 };
 
-//startApp();
-showInvite({
-  email: "email@email.com",
-  phone: "999999999",
-  ref: 100,
-});
+startApp();
+//showInvite({
+//  email: "email@email.com",
+//  phone: "999999999",
+//  ref: 100,
+//});
 
 //quando clicar no logo e no voltar, inicia o app novamente
 document.querySelector("header").onclick = () => startApp();
