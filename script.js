@@ -94,7 +94,6 @@ const saveUser = (userData) => {
   };
   //adiciona o novo usuário no array
   users.push(newUser);
-  console.log(users);
   return newUser;
 };
 
@@ -206,12 +205,16 @@ const startApp = () => {
 };
 
 startApp();
+
 //showInvite({
 //  email: "email@email.com",
 //  phone: "999999999",
 //  ref: 100,
 //});
 
-//quando clicar no logo e no voltar, inicia o app novamente
-document.querySelector("header").onclick = () => startApp();
-document.querySelector("footer").onclick = () => startApp();
+//quando clicar no botão de voltar, inicia o app novamente
+document.querySelector("#app").addEventListener("click", (event) => {
+  if (event.target.closest("footer button")) {
+    startApp();
+  }
+});
