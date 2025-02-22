@@ -27,6 +27,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
+É gerado para o usuário um link de compartilhamento. 
 
 ## 🔖 Layout
 
