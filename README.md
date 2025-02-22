@@ -1,7 +1,7 @@
 <h1 align="center"> CodeCraft </h1>
 
 <p align="center">
-Permite aos usuários controle de reembolso com funções de adicionar e listar despesas, exibindo cada item com detalhes de descrição e valor. Ele calcula automaticamente o total das despesas, mostrando o valor acumulado em tempo real. Site disponível em: https://brunooliveira7.github.io/CodeCraft
+Um site responsivo de inscrição e indicação para eventos, com design moderno e intuitivo. Permite que os usuários se cadastrem rapidamente, indiquem amigos e acompanhem o número de suas inscrições. Totalmente otimizado para dispositivos móveis, oferece uma experiência fluida e interativa. Site disponível em: https://brunooliveira7.github.io/CodeCraft
 </p>
 
 <p align="center">
@@ -27,7 +27,6 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O usuário pode remover dinamicamente itens da lista, com o total atualizado após cada exclusão.
 
 ## 🔖 Layout
 
