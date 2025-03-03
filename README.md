@@ -15,7 +15,7 @@ Um site responsivo de inscrição e indicação para eventos, com design moderno
 </p>
 
 <p align="center">
-  <img alt="License" src="">
+  <img alt="License" src="https://github.com/brunooliveira7/CodeCraft/blob/main/assets/Layout%20tela%2002.png">
 </p>
 
 
